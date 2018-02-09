@@ -1,4 +1,5 @@
 from turtle import Turtle
+from turtle import Screen
 
 def square(t: Turtle, length: int):
     """
@@ -60,13 +61,34 @@ def regular_polygon(t: Turtle, length: int, num_sides=4):
         t.forward(length)
         t.left((360 / num_sides))
 
+def radial_pattern(t: Turtle, n: int, length: int, shape) -> None:
+    '''
+
+    :param t:
+    :param n:
+    :param length:
+    :param shape:
+    :return:
+    '''
+    for count in range(n):
+        shape(t, length)
+        t.left(360 / n)
+
 def main() -> int:
     yertle = Turtle()
+    screen = Screen()
+    yertle.speed(2000)
+    screen.colormode(255)
+    yertle.color("blue")
+    yertle.up()
     square(yertle, 300)
     hexagon(yertle, 100)
     octagon(yertle, 80)
     triangle(yertle, 300)
-    regular_polygon(yertle, 5, 300)
+    regular_polygon(yertle, 5, 100)
+    yertle.down()
+    radial_pattern(yertle, 299, 100, octagon)
+    screen.exitonclick()
 
 if __name__ == '__main__':
     main()
