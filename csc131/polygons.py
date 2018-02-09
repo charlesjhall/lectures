@@ -64,11 +64,11 @@ def regular_polygon(t: Turtle, length: int, num_sides=4):
 def radial_pattern(t: Turtle, n: int, length: int, shape) -> None:
     '''
 
-    :param t:
-    :param n:
-    :param length:
-    :param shape:
-    :return:
+    :param t: an instance of a Turtle used used to render a radial pattern
+    :param n: number of polygons to be drawn in the radial pattern
+    :param length: length of one side of the polygon
+    :param shape: name of the regular polygon to be drawn in the pattern, for example 'square' or 'octagon'
+    :return: None
     '''
     for count in range(n):
         shape(t, length)
