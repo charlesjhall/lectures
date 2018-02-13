@@ -21,8 +21,8 @@ def main():
     if given_list[0] > given_list[1]:
         skipped_numbers.append(given_list[0])
     for x in range(len(given_list)):
-        while x < (len(given_list) - 1):
-            if given_list[x] < average and given_list[x + 2] < average and given_list[x + 1] > average:
+        if given_list[x] < (len(given_list) - 1):
+            if given_list[x] < average and given_list[x + 2] < average < given_list[x + 1]:
                 skipped_numbers.append(given_list[x + 1])
             elif given_list[x] < average and given_list[x + 2] < average and given_list[x + 1] < average:
                 if given_list[x] < given_list[x + 1] and given_list[x + 2] < given_list[x + 1]:
@@ -34,8 +34,6 @@ def main():
                     skipped_numbers.append(given_list[x + 1])
                 else:
                     continue
-            else:
-                continue
     print(skipped_numbers)
     print(average)
     print(skipped_number_total)
@@ -47,5 +45,6 @@ if __name__ == '__main__':
     main()
 
 '''
-abandon all hope ye who enter here: the first item in the list is always 1 and the last number must be landed on, it is a simple greater than comparison combined with a running total sum.
+abandon all hope ye who enter here: the first item in the list is always 1 and the last number must be landed on, 
+it is a simple greater than comparison combined with a running total sum.
 '''
